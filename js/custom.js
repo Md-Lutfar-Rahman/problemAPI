@@ -9,7 +9,10 @@ const displayTools = (data) => {
 
   const cardsContainer = document.getElementById("card-container");
   cardsContainer.innerHTML = "";
-  data.forEach((tool) => {
+  const newsliceddata = data.slice(0,6);
+  // retrived only first 6 data from the list
+  newsliceddata.forEach((tool) => {
+     
     const div = document.createElement("div");
     div.classList.add("col-sm-4");
     div.innerHTML = `
@@ -27,8 +30,9 @@ const displayTools = (data) => {
                     </div>
                     
       `;
-    cardsContainer.appendChild(div);
+    cardsContainer.appendChild(div); 
   });
+
 };
 
 loadAllData();
